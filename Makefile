@@ -16,8 +16,12 @@ hash:hash.c
 	gcc -o $@ $<
 hash.c:hash.h
 
-rb_tree:rb_tree.c rb_tree_main.c
+rb_tree:rb_tree.o rb_tree_main.o
 	gcc -o $@ $?
+rb_tree.o:rb_tree.c
+	gcc -c -o $@ $<
+rb_tree_main.o:rb_tree_main.c
+	gcc -c -o $@ $<
 
 clean:
 	rm -rf ./*.o hash_main bubble_sort hash br_tree

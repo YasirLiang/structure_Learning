@@ -14,7 +14,7 @@ typedef enum color_t
 
 typedef struct rb_node_t
 {
-    struct rb_node_t *left, right, *parent;
+    struct rb_node_t *left, *right, *parent;
     key_t key;
     data_t data;
     color_t color;
