@@ -24,4 +24,4 @@ rb_tree_main.o:rb_tree_main.c
 	gcc -c -o $@ $<
 
 clean:
-	rm -rf ./*.o hash_main bubble_sort hash br_tree
+	rm -rf ./*.o hash_main bubble_sort hash rb_tree
