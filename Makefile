@@ -1,4 +1,4 @@
-all:hash_main bubble_sort hash rb_tree
+all:hash_main bubble_sort hash rb_tree insertion_sort
 
 hash_main: main.o hash_exe.o
 	g++ -o $@ $?
@@ -23,5 +23,11 @@ rb_tree.o:rb_tree.c
 rb_tree_main.o:rb_tree_main.c
 	gcc -c -o $@ $<
 
+insertion_sort: insertion_sort.o
+	gcc -o $@ $?
+
+insertion_sort.o: insertion_sort.c
+	gcc -c -o $@ $<
+
 clean:
-	rm -rf ./*.o hash_main bubble_sort hash rb_tree
+	rm -rf ./*.o hash_main bubble_sort hash rb_tree insertion_sort
