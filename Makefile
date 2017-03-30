@@ -1,4 +1,7 @@
-all:hash_main bubble_sort hash rb_tree insertion_sort interval_max_sum
+target += hash_main bubble_sort hash rb_tree insertion_sort\
+		interval_max_sum quick_sort
+
+all:$(target)
 
 hash_main: main.o hash_exe.o
 	g++ -o $@ $?
@@ -32,5 +35,8 @@ insertion_sort.o: insertion_sort.c
 interval_max_sum:interval_maxSum.c
 	gcc -o $@ $<
 
+quick_sort: quick_sort.c
+	gcc -o $@ $< 
+
 clean:
-	rm -rf ./*.o hash_main bubble_sort hash rb_tree insertion_sort interval_max_sum
+	rm -rf ./*.o $(target) 
