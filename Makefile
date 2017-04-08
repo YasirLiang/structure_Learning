@@ -1,5 +1,5 @@
 target += hash_main bubble_sort hash rb_tree insertion_sort\
-		interval_max_sum quick_sort dynamic_programming
+		interval_max_sum quick_sort dynamic_programming dynamic_programming_fib
 
 all:$(target)
 
@@ -39,6 +39,9 @@ quick_sort: quick_sort.c
 	gcc -o $@ $< 
 
 dynamic_programming:dynamic_programming.c
+	gcc -o $@ $<
+
+dynamic_programming_fib:dynamic_programming_fib.c
 	gcc -o $@ $<
 
 clean:
